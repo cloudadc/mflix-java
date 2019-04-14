@@ -1,0 +1,53 @@
+= mflix
+
+A MongoDB, Spring Boot, React based modern application.
+
+== Sample Data
+
+The data need to sample to a exist MongoDB replication set.
+
+[source, text]
+.*Login to MongoDB*
+----
+$ mongo "mongodb+srv://mflix-bsok2.mongodb.net/test" --username kylin
+MongoDB Enterprise mflix-shard-0:PRIMARY> show dbs
+admin  0.000GB
+local  1.581GB
+----
+
+[source, text]
+.*Import Data*
+----
+$ cd mflix-java/
+$ mongorestore --drop --gzip --uri mongodb+srv://kylin:mongo@mflix-bsok2.mongodb.net/mflix data
+----
+
+== Quick Run
+
+[source, text]
+.*Edit src/main/resources/application.properties add mongodn URL*
+----
+spring.mongodb.uri=mongodb+srv://kylin:mongo@mflix-bsok2.mongodb.net/mflix
+----
+
+[source, text]
+.*Start spring boot run*
+----
+$ mvn spring-boot:run
+----
+
+*Test the app via* http://localhost:5000/
+
+== TODO
+
+[source, text]
+.**
+----
+
+----
+
+[source, text]
+.**
+----
+
+----
